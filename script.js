@@ -6,7 +6,7 @@ body.appendChild(container);
 
 makeGrid(16);
 
-button.addEventListener("click", changeGridSize)
+button.addEventListener("click", changeGridSize);
 
 function makeGrid(gridSize) {
   for (let i = 0; i < gridSize; i++) {
@@ -28,7 +28,7 @@ function changeGridSize() {
     gridSize = parseInt(window.prompt("Input custom grid size"));
   }
 
-
+  makeGrid(gridSize);
 }
 
 // const cell = document.querySelectorAll(".cell");
