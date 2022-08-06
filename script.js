@@ -4,18 +4,7 @@ const button = document.querySelector("#gridSize");
 container.setAttribute("id", "container");
 body.appendChild(container);
 
-mak
-
-for (let i = 0; i < 16; i++) {
-  for (let j = 0; j < 16; j++) {
-    let cellId = "cell-" + i + "-" + j;
-      const cell = document.getElementById(cellId);
-      cell.addEventListener("mouseover", () => {
-        // var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        cell.style.backgroundColor = 'red';
-      })
-  }
-}
+makeGrid(16);
 
 button.addEventListener("click", changeGridSize)
 
@@ -41,7 +30,6 @@ function changeGridSize() {
 
 
 }
-
 
 // const cell = document.querySelectorAll(".cell");
 // console.log(cell);
