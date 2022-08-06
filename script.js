@@ -1,10 +1,22 @@
 const body = document.body;
 const container = document.createElement("div");
 const button = document.querySelector("#gridSize");
+let gridSize = 16;
 container.setAttribute("id", "container");
 body.appendChild(container);
 
-makeGrid(16);
+makeGrid(gridSize);
+
+for (let i = 0; i < gridSize; i++) {
+  for (let j = 0; j < gridSize; j++) {
+    let cellId = "cell-" + i + "-" + j;
+    const cell = document.getElementById(cellId);
+    cell.addEventListener("mouseover", () => {
+      // var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+      cell.style.backgroundColor = "red";
+    });
+  }
+}
 
 button.addEventListener("click", changeGridSize);
 
@@ -21,8 +33,8 @@ function makeGrid(gridSize) {
 }
 
 function changeGridSize() {
-  let gridSize = parseInt(window.prompt("Input custom grid size"));
-  
+  gridSize = parseInt(window.prompt("Input custom grid size"));
+
   if (gridSize > 100) {
     alert("Grid can't be bigger than 100");
     gridSize = parseInt(window.prompt("Input custom grid size"));
