@@ -7,17 +7,6 @@ body.appendChild(container);
 
 makeGrid(gridSize);
 
-for (let i = 0; i < gridSize; i++) {
-  for (let j = 0; j < gridSize; j++) {
-    let cellId = "cell-" + i + "-" + j;
-    const cell = document.getElementById(cellId);
-    cell.addEventListener("mouseover", () => {
-      // var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-      cell.style.backgroundColor = "red";
-    });
-  }
-}
-
 button.addEventListener("click", changeGridSize);
 
 function makeGrid(gridSize) {
@@ -33,6 +22,8 @@ function makeGrid(gridSize) {
   
   container.style.gridTemplateColumns = `repeat( ${gridSize}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+
+  changeColorOnHover();
 }
 
 function changeGridSize() {
@@ -49,6 +40,18 @@ function changeGridSize() {
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
+  }
+}
+
+function changeColorOnHover() {
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      let cellId = "cell-" + i + "-" + j;
+      const cell = document.getElementById(cellId);
+      cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = "red";
+      });
+    }
   }
 }
 
