@@ -1,8 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: wheat;
+}
+
+#title {
+    text-align: center;
+}
+
 #container {
     border: 1px solid black;
+    border-radius: .5%;
     display: grid;
     width: 500px;
     height: 500px;
+    background-color: beige;
+}
+
+.content {
+    width: 550px;
+    height: 550px;
+    border: 1px solid gray;
+    border-radius: .5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: beige;
 }
 
 .cell {
