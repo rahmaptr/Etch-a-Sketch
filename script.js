@@ -50,6 +50,7 @@ function changeColorOnHover() {
       const cell = document.getElementById(cellId);
       cell.addEventListener("mouseover", () => {
         cell.style.backgroundColor = "red";
+        cell.style.border = 'none';
       });
     }
   }
