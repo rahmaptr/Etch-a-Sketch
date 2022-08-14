@@ -1,13 +1,15 @@
 const body = document.body;
 const container = document.createElement("div");
-const button = document.querySelector("#gridSize");
+const buttons = document.querySelector("#buttons");
+const content =document.querySelector(".content");
+const gridButton = document.querySelector("#gridSize");
 let gridSize = 16;
 container.setAttribute("id", "container");
-body.appendChild(container);
+content.appendChild(container);
 
 makeGrid(gridSize);
 
-button.addEventListener("click", changeGridSize);
+gridButton.addEventListener("click", changeGridSize);
 
 function makeGrid(gridSize) {
   for (let i = 0; i < gridSize; i++) {
