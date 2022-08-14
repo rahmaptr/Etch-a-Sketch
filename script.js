@@ -3,6 +3,7 @@ const container = document.createElement("div");
 const buttons = document.querySelector("#buttons");
 const content =document.querySelector(".content");
 const gridButton = document.querySelector("#gridSize");
+const clearButton = document.querySelector("#clear")
 let gridSize = 16;
 container.setAttribute("id", "container");
 content.appendChild(container);
@@ -10,6 +11,7 @@ content.appendChild(container);
 makeGrid(gridSize);
 
 gridButton.addEventListener("click", changeGridSize);
+clearButton.addEventListener("click", clearColor)
 
 function makeGrid(gridSize) {
   for (let i = 0; i < gridSize; i++) {
@@ -54,6 +56,17 @@ function changeColorOnHover() {
         cell.style.backgroundColor = "white";
         cell.style.border = 'none';
       });
+    }
+  }
+}
+
+function clearColor() {
+  for (let i = 0; i < gridSize; i++) {
+    for (let j = 0; j < gridSize; j++) {
+      let cellId = "cell-" + i + "-" + j;
+      const cell = document.getElementById(cellId);
+      cell.style.border = "thin solid hsl(0, 0%, 80%)";
+      cell.style.backgroundColor = "beige";
     }
   }
 }
