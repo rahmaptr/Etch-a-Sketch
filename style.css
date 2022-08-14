@@ -6,12 +6,10 @@
 #container {
     border: 1px solid black;
     display: grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
 }
 
 .cell {
     background-color: aliceblue;
     border: 1px solid black;
-    height: 1em;
+    aspect-ratio: 1;
 }

@@ -30,6 +30,9 @@ function makeGrid(gridSize) {
       container.appendChild(cell);
     }
   }
+  
+  container.style.gridTemplateColumns = `repeat( ${gridSize}, 1fr)`;
+  container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 }
 
 function changeGridSize() {
@@ -39,8 +42,14 @@ function changeGridSize() {
     alert("Grid can't be bigger than 100");
     gridSize = parseInt(window.prompt("Input custom grid size"));
   }
-
+  removeAllChildNodes(container);
   makeGrid(gridSize);
+}
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
 }
 
 // const cell = document.querySelectorAll(".cell");
